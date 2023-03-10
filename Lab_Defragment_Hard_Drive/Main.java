@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Main {
@@ -36,7 +35,6 @@ public class Main {
     }
 
     public static int getFirstAvailableSector() {
-        // return programs.get(' ').get(0);
         return emptyMem.get(0);
     }
 
@@ -70,7 +68,7 @@ public class Main {
 
             index = program.getValue().get(0);
 
-            if (index != 0 && index != endPoint + 1) {
+            if (index != 0 && index > endPoint + 1) {
                 System.out.println(programs);
                 swap(endPoint, getFirstAvailableSector());
                 System.out.println(programs);
