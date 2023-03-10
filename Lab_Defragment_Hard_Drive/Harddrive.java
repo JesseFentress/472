@@ -4,8 +4,11 @@ public class Harddrive {
             'P', ' ', ' ', 'R', ' ', ' '
     };
 
-    static final char CLEAR_SECTOR = ' ';
+    static final char CLEAR_SECTOR = ' '; // Empty sector
 
+    /*
+     * Swaps a used sector with an empty sector.
+     */
     public void swap(Integer usedMemLocation, Integer emptyMemLocation) {
 
         char currentChar = sectors[usedMemLocation];
@@ -15,18 +18,30 @@ public class Harddrive {
 
     }
 
+    /*
+     * Returns the program identifier at a given sector
+     */
     public char getProgramAtSector(int sectorIndex) {
         return sectors[sectorIndex];
     }
 
+    /*
+     * Returns the number of sectors in the harddrive
+     */
     public int getHarddriveSize() {
         return sectors.length;
     }
 
+    /*
+     * Returns whether or not a sector is empty
+     */
     public boolean isEmptySector(int sectorIndex) {
         return sectors[sectorIndex] == CLEAR_SECTOR;
     }
 
+    /*
+     * Displays the harddrive sectors and their contents
+     */
     public void printHarddrive() {
         for (int i = 0; i < 10; i++) {
             System.out.println(String.format("Sector %d [%c] | Sector %d [%c] | Sector %d [%c] | Sector %d [%c]", i,
